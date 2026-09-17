@@ -1,7 +1,12 @@
-# No starter code provided — write the full function yourself.
+def dedupe_preserve_order(items):
+    # TODO: use a set to track seen values while building a new list
+    seen = set()
+    result = []
+    for item in items:
+        if item not in seen:
+            seen.add(item)
+            result.append(item)
+    # that preserves the original order of first appearances
+    return result
 
-def create_book_record(title, author, year):
-    return (title, author, year)
-
-
-print(create_book_record("Emma", "Jane Austen", 1815))
+print(dedupe_preserve_order([3, 1, 3, 2, 1]))
