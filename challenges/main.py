@@ -1,12 +1,9 @@
-def word_lengths(words):
-    lengths = {}
-    # TODO: loop through `words` and populate `lengths` with word -> length of word
-    for word in words:
-        if word not in lengths:
-            lengths[word] = len(word)
+def total_scores(rounds):
+    totals = {}
+    for round_scores in rounds:
+        for player, points in round_scores.items():
+            totals[player] = totals.get(player, 0) + points
+    return totals
 
-    return lengths
-
-print(word_lengths(["cat", "elephant", "ox"]))
-print(word_lengths([]))
-print(word_lengths(["hi", "hi"]))
+print(total_scores([{"Ada": 5, "Bola": 3}, {"Ada": 2, "Bola": 4}]))
+print(total_scores([{"Ada": 10}]))
