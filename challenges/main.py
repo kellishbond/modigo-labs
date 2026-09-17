@@ -1,9 +1,6 @@
-def compare_hobbies(person1_hobbies, person2_hobbies):
-    # TODO: use set operations to find shared, only_person1, and only_person2 hobbies
-    return {
-        "shared": person1_hobbies & person2_hobbies ,
-        "only_person1": person1_hobbies - person2_hobbies ,
-        "only_person2": person2_hobbies - person1_hobbies
-    }
+def merge_tags(tags1, tags2):
+    merged = tags1 | tags2
+    return merged
 
-print(compare_hobbies({"reading", "coding"}, {"codding", "gaming"}))
+print(merge_tags({"python", "web"}, {"web", "css"}))
+print(merge_tags(set(), {"css"}))
