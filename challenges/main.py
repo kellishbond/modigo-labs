@@ -1,12 +1,8 @@
-def dedupe_preserve_order(items):
-    # TODO: use a set to track seen values while building a new list
-    seen = set()
-    result = []
-    for item in items:
-        if item not in seen:
-            seen.add(item)
-            result.append(item)
-    # that preserves the original order of first appearances
-    return result
+def count_unique_coordinates(coordinates):
+    unique = []
+    for coord in coordinates:
+        unique.append(coord)
+    return len(set(unique))
 
-print(dedupe_preserve_order([3, 1, 3, 2, 1]))
+
+print(count_unique_coordinates([(0,0), (1,0), (0,1)]))
