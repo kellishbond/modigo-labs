@@ -1,8 +1,15 @@
-def count_unique_coordinates(coordinates):
-    unique = []
-    for coord in coordinates:
-        unique.append(coord)
-    return len(set(unique))
+def has_all_vowels(word):
+    required = {"a", "e", "i", "o", "u"}
+    word = word.lower()
+    # TODO: build a set of vowels actually found in `word`,
 
+    # then check if it contains all of `required`
+    found = set()
 
-print(count_unique_coordinates([(0,0), (1,0), (0,1)]))
+    for char in word:
+        if char in required:
+            found.add(char)
+    return required.issubset(found)
+
+    
+print(has_all_vowels("education"))
